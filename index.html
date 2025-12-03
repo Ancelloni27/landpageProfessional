@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- Projeto: Landing — edite foto, CV e links -->
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gabriel Ancelloni | Desenvolvedor Mobile</title>
+    <!-- Arquivo de estilos — altere variáveis em style.css :root -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Para favicon, adicione <link rel="icon" href="favicon.ico"> -->
+</head>
+<body>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema" aria-pressed="false">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <!-- Header: foto, nome e resumo -->
+    <header class="hero">
+        <div class="container">
+            <!-- Troque 'foto-perfil.jpg' pela sua foto (150x150) -->
+            <div class="profile-photo">
+                <img src="foto-perfil.jpg" alt="Gabriel Henrique Ancelloni Cahé" class="profile-img">
+            </div>
+
+            <h1>Gabriel Henrique Ancelloni Cahé</h1>
+            <p class="profissao">Desenvolvedor Mobile &amp; Designer</p>
+            <p class="resumo">Estudante de Análise e Desenvolvimento de Sistemas (3º período) — Buscando estágio em desenvolvimento iOS (SwiftUI / UIKit).</p>
+            <p class="localizacao">📍 Guarulhos, São Paulo, Brasil</p>
+
+            <!-- Link para baixar CV (troque cv.pdf pelo seu arquivo) -->
+            <a href="cv.pdf" download class="cv-btn" aria-label="Baixar currículo">
+                <span class="icon">📄</span> Baixar CV
+            </a>
+        </div>
+    
+    </header>
+    <!-- Contatos e habilidades -->
+    <main class="contato-section">
+        <div class="container">
+
+            <div class="contatos-links">
+                <a class="contato-btn whatsapp" href="https://wa.me/5511972625388" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">💬 WhatsApp</a>
+                <a class="contato-btn email" href="mailto:ancelloni71@gmail.com" aria-label="Enviar email">📧 Email</a>
+                <a class="contato-btn linkedin" href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn">🔗 LinkedIn</a>
+            </div>
+
+            <!-- Cards de habilidades — edite o conteúdo dentro de cada card -->
+            <div class="skills-grid">
+
+                <section class="skill-card" aria-labelledby="s1">
+                    <div class="skill-header">
+                        <span class="skill-icon">📱</span>
+                        <h3 id="s1">Desenvolvimento iOS</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>SwiftUI</li>
+                        <li>UIKit</li>
+                        <li>Integração de APIs</li>
+                    </ul>
+                </section>
+
+                <section class="skill-card" aria-labelledby="s2">
+                    <div class="skill-header">
+                        <span class="skill-icon">🌐</span>
+                        <h3 id="s2">Desenvolvimento Web</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </section>
+
+                <section class="skill-card" aria-labelledby="s3">
+                    <div class="skill-header">
+                        <span class="skill-icon">🎨</span>
+                        <h3 id="s3">Design &amp; Prototipagem</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Figma</li>
+                        <li>UI/UX Design</li>
+                        <li>Wireframing</li>
+                    </ul>
+                </section>
+
+                <section class="skill-card" aria-labelledby="s4">
+                    <div class="skill-header">
+                        <span class="skill-icon">⚙️</span>
+                        <h3 id="s4">Habilidades Técnicas</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Swift</li>
+                        <li>Git / GitHub</li>
+                        <li>Metodologias Ágeis</li>
+                    </ul>
+                </section>
+
+                <section class="skill-card" aria-labelledby="s5">
+                    <div class="skill-header">
+                        <span class="skill-icon">🧠</span>
+                        <h3 id="s5">Habilidades Comportamentais</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Trabalho em equipe</li>
+                        <li>Aprendizado rápido</li>
+                        <li>Foco em resultados</li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="ano-atual"></span> Gabriel Ancelloni</p>
+        </div>
+    </footer>
+
+    <!-- Script: alterna tema e atualiza o ano no rodapé -->
+    <script src="script.js"></script>
+</body>
+</html>

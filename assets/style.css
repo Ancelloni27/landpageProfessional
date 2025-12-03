@@ -1,0 +1,85 @@
+/* CSS minimal — edite variáveis em :root (cores, radius, fonte) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg:#fff;
+  --card:rgba(255,255,255,0.7);
+  --text:#0b1220;
+  --muted:#6b7280;
+  --accent1:#6366f1;
+  --accent2:#8b5cf6;
+  --radius:12px;
+  --gap:20px;
+}
+html.dark-mode{
+  --bg:#071028;
+  --card:rgba(10,17,30,0.65);
+  --text:#e6eef8;
+  --muted:#93a4bf;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);}
+body{min-height:100vh;display:flex;flex-direction:column}
+.container{max-width:1000px;margin:0 auto;padding:24px}
+
+/* Header */
+.hero{padding:28px 0 24px;text-align:center}
+.profile-photo{width:140px;height:140px;margin:0 auto 12px;border-radius:50%;overflow:hidden;border:3px solid var(--accent1);background:var(--card);backdrop-filter:blur(8px)}
+.profile-img{width:100%;height:100%;object-fit:cover;display:block}
+h1{font-size:1.8rem;margin-bottom:6px}
+.profissao{font-weight:600;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
+.resumo{color:var(--muted);max-width:680px;margin:0 auto 14px}
+
+/* Botões */
+.cv-btn,.contato-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:var(--radius);text-decoration:none;color:#fff;font-weight:600;cursor:pointer}
+.cv-btn{background:linear-gradient(90deg,var(--accent1),var(--accent2))}
+.hero .cv-btn{display:inline-block;margin:24px auto 0;padding:12px 20px}
+
+/* CV no grupo de contatos: estilo compacto */
+.contatos-links .cv-btn{
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#fff;
+  padding:8px 14px;
+  border-radius:var(--radius);
+  margin:0;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.contatos-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:6px auto 20px}
+
+/* reduzir espaço entre header e contatos */
+.contato-section{padding-top:6px}
+.contato-btn{background:var(--card);backdrop-filter:blur(8px);color:var(--text);padding:10px 16px}
+.contato-btn.whatsapp{background:linear-gradient(90deg,#25d366,#20ba5a);color:#fff}
+.contato-btn.email{background:linear-gradient(90deg,#6366f1,#4f46e5);color:#fff}
+.contato-btn.linkedin{background:linear-gradient(90deg,#0077b5,#006399);color:#fff}
+
+/* Cards de habilidades */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--gap);}
+.skill-card{background:var(--card);padding:20px;border-radius:14px;backdrop-filter:blur(8px);box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.skill-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.skill-icon{font-size:1.6rem}
+.skill-list{list-style:none;color:var(--muted);display:flex;flex-direction:column;gap:8px}
+
+/* Rodapé */
+.footer{margin-top:auto;padding:18px 0;text-align:center;color:var(--muted)}
+
+/* Botão de tema */
+.theme-toggle{position:fixed;right:18px;top:18px;width:44px;height:44px;border-radius:50%;border:0;background:var(--card);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;cursor:pointer}
+
+/* Acessibilidade: reduz animações se preferido pelo usuário */
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Responsivo */
+@media (max-width:600px){.profile-photo{width:110px;height:110px}.container{padding:16px}h1{font-size:1.4rem}}
+@media (max-width:600px){
+  /* Mobile: botões do grupo ficam full-width */
+  .contatos-links .cv-btn{width:100%;justify-content:center}
+}
+
+/* Foco acessível */
+a:focus{outline:3px solid rgba(99,102,241,0.18);outline-offset:3px}
+
