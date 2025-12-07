@@ -42,7 +42,7 @@ body {
 /* ================= SEÇÃO HERO (Apresentação) ================= */
 .hero {
     background-color: var(--cor-roxaclara);
-    padding: 60px 0;
+    padding: 32px 0;
     text-align: center;
     border-bottom: 1px solid #eee;
 }
