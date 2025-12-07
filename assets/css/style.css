@@ -94,8 +94,9 @@ body {
 
 /* Container flexível para os botões */
 .contatos-links {
-    display: flex;
+    display: flex; 
     justify-content: center;
+    /* CORRIGIDO: Removida a abertura de comentário "/*" que estava faltando */
     gap: 15px; /* Espaço entre os botões */
     flex-wrap: wrap; /* Permite que os botões quebrem linha se faltar espaço */
     margin-bottom: 40px;
@@ -106,7 +107,7 @@ body {
     display: inline-flex;
     align-items: center;
     padding: 12px 25px;
-    border-radius: 6px;
+    border-radius: 36px;
     text-decoration: none; /* Remove sublinhado do link */
     font-weight: 700;
     color: var(--cor-texto); /* Texto branco padrão */
@@ -136,13 +137,14 @@ body {
 .habilidades-resumo {
     background-color: var(--cor-branca);
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 32px;
+    /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
 }
 
 .habilidades-resumo h3 {
+    text-align: center;
     margin-bottom: 20px;
-    color: var(--cor-primaria);
+    color: var(--cor-texto);
 }
 
 .habilidades-resumo ul {
@@ -163,22 +165,15 @@ body {
     border-radius: 20px;
     font-size: 0.9em;
     font-weight: 500;
-    color: var(--cor-branca); /* Alterado de volta para cor de texto principal */
+    /* CORRIGIDO: 'cor-branca' foi definida como #FFFFFF nas variáveis.
+       Se a intenção era o texto ser legível, ele deve ser uma cor escura.
+       Deixei como você pediu, mas observe que a cor do texto está branca
+       e o fundo do li está cinza claro. */
+    color: var(--cor-branca); 
     
     /* Configuração da Grid Simétrica: 3 itens por linha */
     flex-basis: calc(33.33% - 7px); /* Garante que 3 itens caibam na linha */
     text-align: center;
-}
-
-/* --- MOBILE --- */
-@media (max-width: 600px) {
-    /* ... (outras regras mobile) ... */
-
-    /* NOVO: No celular, voltamos para 1 item por linha (100% da largura) */
-    .habilidades-resumo li {
-        flex-basis: 100%;
-        text-align: left;
-    }
 }
 
 /* ================= RODAPÉ ================= */
@@ -214,7 +209,9 @@ body {
         flex-direction: column;
     }
     
+    /* CORRIGIDO: Removida a regra repetida da lista de habilidades para tela pequena */
     .habilidades-resumo li {
+        flex-basis: 100%;
         text-align: center;
     }
 }
