@@ -109,7 +109,7 @@ body {
     border-radius: 6px;
     text-decoration: none; /* Remove sublinhado do link */
     font-weight: 700;
-    color: var(--cor-branca); /* Texto branco padrão */
+    color: var(--cor-texto); /* Texto branco padrão */
     transition: opacity 0.2s; /* Suaviza o efeito hover */
 }
 
@@ -185,7 +185,7 @@ body {
 .footer {
     text-align: center;
     padding: 30px 0;
-    background-color: var(--cor-branca);
+    background-color: var(--cor-roxaclara);
     color: var(--cor-secundaria);
     font-size: 0.9em;
     border-top: 1px solid #eee;
