@@ -3,19 +3,14 @@
 
 /* ================= VARIÁVEIS (Cores do tema) ================= */
 :root {
-    --cor-fundo-site: #f4f4ff;
-    /* Cinza azulado muito claro */
-    --cor-primaria: #007bff;
-    /* Azul principal (botões, destaques) */
-    --cor-texto: #333333;
-    /* Cinza escuro para leitura */
-    --cor-secundaria: #6c757d;
-    /* Cinza médio para textos de apoio */
-    --cor-branca: #ffffff;
-    /* Branco puro para fundos de cartão */
-
+    --cor-fundo-site: #f4f4ff; /* Cinza azulado muito claro */
+    --cor-primaria: #007bff;   /* Azul principal (botões, destaques) */
+    --cor-texto: #333333;      /* Cinza escuro para leitura */
+    --cor-secundaria: #6c757d; /* Cinza médio para textos de apoio */
+    --cor-branca: #ffffff;     /* Branco puro para fundos de cartão */
+    
     /* Cores de marcas específicas */
-    --cor-whatsapp: #278b4c;
+    --cor-whatsapp: #25D366;
     --cor-linkedin: #0077B5;
 }
 
@@ -23,19 +18,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    /* Facilita o cálculo de larguras e alturas */
+    box-sizing: border-box; /* Facilita o cálculo de larguras e alturas */
 }
 
 body {
-    /* Aplica a fonte importada */
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    /* Altura da linha para melhorar leitura */
+    line-height: 1.6; /* Altura da linha para melhorar leitura */
     color: var(--cor-texto);
     background-color: var(--cor-fundo-site);
-    /* O peso 400 (normal) é ideal para o corpo do texto */
-    font-weight: 400;
     /* O flex aqui ajuda a manter o footer sempre no final da página */
     display: flex;
     flex-direction: column;
@@ -46,8 +36,7 @@ body {
 .container {
     width: 90%;
     max-width: 800px;
-    margin: 0 auto;
-    /* Centraliza horizontalmente */
+    margin: 0 auto; /* Centraliza horizontalmente */
     padding: 20px;
 }
 
@@ -63,10 +52,8 @@ body {
 .profile-photo {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    /* Deixa a imagem redonda */
-    object-fit: cover;
-    /* Evita que a imagem distorça */
+    border-radius: 50%; /* Deixa a imagem redonda */
+    object-fit: cover;  /* Evita que a imagem distorça */
     border: 4px solid var(--cor-fundo-site);
     margin-bottom: 20px;
 }
@@ -74,7 +61,6 @@ body {
 .hero h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    /* Mantido o peso 700 (negrito) para forte destaque */
     font-weight: 700;
 }
 
@@ -82,28 +68,21 @@ body {
     font-size: 1.2em;
     color: var(--cor-primaria);
     margin-bottom: 15px;
-    /* Sugestão de peso 300 (light) para contraste sutil, já que está colorido */
-    font-weight: 300;
 }
 
 .hero .resumo {
     color: var(--cor-secundaria);
     margin-bottom: 10px;
-    /* Mantido peso 400 (normal) */
-    font-weight: 400;
 }
 
 .hero .localizacao {
     font-size: 0.9em;
     color: var(--cor-secundaria);
-    /* Sugestão de peso 300 (light) para elementos de texto secundários */
-    font-weight: 300;
 }
 
 /* ================= SEÇÃO DE CONTATO ================= */
 .contato-section {
-    flex-grow: 1;
-    /* Faz esta seção ocupar o espaço que sobrar na tela */
+    flex-grow: 1; /* Faz esta seção ocupar o espaço que sobrar na tela */
     padding: 40px 0;
 }
 
@@ -111,18 +90,14 @@ body {
     text-align: center;
     font-size: 1.6em;
     margin-bottom: 30px;
-    /* Mantido peso 700 (negrito) */
-    font-weight: 700;
 }
 
 /* Container flexível para os botões */
 .contatos-links {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    /* Espaço entre os botões */
-    flex-wrap: wrap;
-    /* Permite que os botões quebrem linha se faltar espaço */
+    gap: 15px; /* Espaço entre os botões */
+    flex-wrap: wrap; /* Permite que os botões quebrem linha se faltar espaço */
     margin-bottom: 40px;
 }
 
@@ -132,14 +107,10 @@ body {
     align-items: center;
     padding: 12px 25px;
     border-radius: 6px;
-    text-decoration: none;
-    /* Remove sublinhado do link */
-    /* Mantido peso 700 para dar impacto aos botões */
+    text-decoration: none; /* Remove sublinhado do link */
     font-weight: 700;
-    color: var(--cor-branca);
-    /* Texto branco padrão */
-    transition: opacity 0.2s;
-    /* Suaviza o efeito hover */
+    color: var(--cor-branca); /* Texto branco padrão */
+    transition: opacity 0.2s; /* Suaviza o efeito hover */
 }
 
 .contato-btn .icon {
@@ -148,26 +119,15 @@ body {
 }
 
 .contato-btn:hover {
-    opacity: 0.85;
-    /* Leve transparência ao passar o mouse */
+    opacity: 0.85; /* Leve transparência ao passar o mouse */
 }
 
 /* Cores específicas de cada botão */
-.whatsapp {
-    background-color: var(--cor-whatsapp);
-}
-
-.email {
-    background-color: var(--cor-primaria);
-}
-
-.linkedin {
-    background-color: var(--cor-linkedin);
-}
-
-.download {
-    background-color: var(--cor-texto);
-    /* Botão de download mais sóbrio */
+.whatsapp { background-color: var(--cor-whatsapp); }
+.email { background-color: var(--cor-primaria); }
+.linkedin { background-color: var(--cor-linkedin); }
+.download { 
+    background-color: var(--cor-texto); /* Botão de download mais sóbrio */
     margin-top: 15px;
 }
 
@@ -177,7 +137,7 @@ body {
     background-color: var(--cor-branca);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .habilidades-resumo h3 {
@@ -188,13 +148,10 @@ body {
 .habilidades-resumo ul {
     list-style: none;
     padding-left: 0;
-    display: flex;
-    /* Mantém o Flexbox */
+    display: flex; /* Mantém o Flexbox */
     flex-wrap: wrap;
-    gap: 10px;
-    /* Espaço entre os itens */
-    justify-content: space-between;
-    /* Distribui o espaço restante */
+    gap: 10px; /* Espaço entre os itens */
+    justify-content: space-between; /* Distribui o espaço restante */
 }
 
 /* NOVO: Define que cada item deve ocupar 32% da largura.
@@ -206,12 +163,10 @@ body {
     border-radius: 20px;
     font-size: 0.9em;
     font-weight: 500;
-    color: var(--cor-texto);
-    /* Alterado de volta para cor de texto principal */
-
+    color: var(--cor-texto); /* Alterado de volta para cor de texto principal */
+    
     /* Configuração da Grid Simétrica: 3 itens por linha */
-    flex-basis: calc(33.33% - 7px);
-    /* Garante que 3 itens caibam na linha */
+    flex-basis: calc(33.33% - 7px); /* Garante que 3 itens caibam na linha */
     text-align: center;
 }
 
@@ -226,18 +181,6 @@ body {
     }
 }
 
-/* Estilo de "tags" para as habilidades */
-.habilidades-resumo li {
-    background-color: var(--cor-fundo-site);
-    padding: 8px 15px;
-    border-radius: 20px;
-    /* Bordas arredondadas estilo 'pílula' */
-    font-size: 0.9em;
-    color: var(--cor-texto);
-    /* Sugestão de peso 700 ou 400, dependendo da importância. 500 não foi importado. Usarei 700 para destaque. */
-    font-weight: 700;
-}
-
 /* ================= RODAPÉ ================= */
 .footer {
     text-align: center;
@@ -246,17 +189,14 @@ body {
     color: var(--cor-secundaria);
     font-size: 0.9em;
     border-top: 1px solid #eee;
-    /* Sugestão de peso 300 (light) para o rodapé, que é texto de apoio */
-    font-weight: 300;
 }
 
 /* ================= RESPONSIVIDADE (Celulares) ================= */
 /* Aplica estes estilos apenas se a tela tiver 600px ou menos */
 @media (max-width: 600px) {
-
+    
     .hero h1 {
-        font-size: 1.8em;
-        /* Diminui o título */
+        font-size: 1.8em; /* Diminui o título */
     }
 
     /* Botões passam a ficar um embaixo do outro e esticados */
@@ -265,8 +205,7 @@ body {
     }
 
     .contato-btn {
-        width: 100%;
-        /* Ocupa toda a largura */
+        width: 100%;     /* Ocupa toda a largura */
         justify-content: center;
     }
 
@@ -274,7 +213,7 @@ body {
     .habilidades-resumo ul {
         flex-direction: column;
     }
-
+    
     .habilidades-resumo li {
         text-align: center;
     }
