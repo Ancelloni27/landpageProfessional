@@ -22,10 +22,13 @@
 }
 
 body {
+    /* Aplica a fonte importada */
     font-family: 'Roboto', sans-serif;
     line-height: 1.6; /* Altura da linha para melhorar leitura */
     color: var(--cor-texto);
     background-color: var(--cor-fundo-site);
+    /* O peso 400 (normal) é ideal para o corpo do texto */
+    font-weight: 400; 
     /* O flex aqui ajuda a manter o footer sempre no final da página */
     display: flex;
     flex-direction: column;
@@ -61,6 +64,7 @@ body {
 .hero h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
+    /* Mantido o peso 700 (negrito) para forte destaque */
     font-weight: 700;
 }
 
@@ -68,16 +72,22 @@ body {
     font-size: 1.2em;
     color: var(--cor-primaria);
     margin-bottom: 15px;
+    /* Sugestão de peso 300 (light) para contraste sutil, já que está colorido */
+    font-weight: 300; 
 }
 
 .hero .resumo {
     color: var(--cor-secundaria);
     margin-bottom: 10px;
+    /* Mantido peso 400 (normal) */
+    font-weight: 400; 
 }
 
 .hero .localizacao {
     font-size: 0.9em;
     color: var(--cor-secundaria);
+    /* Sugestão de peso 300 (light) para elementos de texto secundários */
+    font-weight: 300; 
 }
 
 /* ================= SEÇÃO DE CONTATO ================= */
@@ -90,6 +100,8 @@ body {
     text-align: center;
     font-size: 1.6em;
     margin-bottom: 30px;
+    /* Mantido peso 700 (negrito) */
+    font-weight: 700;
 }
 
 /* Container flexível para os botões */
@@ -108,6 +120,7 @@ body {
     padding: 12px 25px;
     border-radius: 6px;
     text-decoration: none; /* Remove sublinhado do link */
+    /* Mantido peso 700 para dar impacto aos botões */
     font-weight: 700;
     color: var(--cor-branca); /* Texto branco padrão */
     transition: opacity 0.2s; /* Suaviza o efeito hover */
@@ -142,6 +155,8 @@ body {
 .habilidades-resumo h3 {
     margin-bottom: 20px;
     color: var(--cor-primaria);
+    /* Mantido peso 700 */
+    font-weight: 700; 
 }
 
 .habilidades-resumo ul {
@@ -158,7 +173,8 @@ body {
     border-radius: 20px; /* Bordas arredondadas estilo 'pílula' */
     font-size: 0.9em;
     color: var(--cor-texto);
-    font-weight: 500;
+    /* Sugestão de peso 700 ou 400, dependendo da importância. 500 não foi importado. Usarei 700 para destaque. */
+    font-weight: 700; 
 }
 
 /* ================= RODAPÉ ================= */
@@ -169,6 +185,8 @@ body {
     color: var(--cor-secundaria);
     font-size: 0.9em;
     border-top: 1px solid #eee;
+    /* Sugestão de peso 300 (light) para o rodapé, que é texto de apoio */
+    font-weight: 300; 
 }
 
 /* ================= RESPONSIVIDADE (Celulares) ================= */
