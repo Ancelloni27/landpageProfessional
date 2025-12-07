@@ -15,7 +15,7 @@
     /* Branco puro para fundos de cartão */
 
     /* Cores de marcas específicas */
-    --cor-whatsapp: #25D366;
+    --cor-whatsapp: #278b4c;
     --cor-linkedin: #0077B5;
 }
 
@@ -172,27 +172,58 @@ body {
 }
 
 /* ================= RESUMO DE HABILIDADES ================= */
+/* --- HABILIDADES --- */
 .habilidades-resumo {
     background-color: var(--cor-branca);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    /* Sombra leve */
 }
 
 .habilidades-resumo h3 {
     margin-bottom: 20px;
     color: var(--cor-primaria);
-    /* Mantido peso 700 */
-    font-weight: 700;
 }
 
 .habilidades-resumo ul {
     list-style: none;
-    /* Remove os pontos da lista padrão */
+    padding-left: 0;
     display: flex;
+    /* Mantém o Flexbox */
     flex-wrap: wrap;
     gap: 10px;
+    /* Espaço entre os itens */
+    justify-content: space-between;
+    /* Distribui o espaço restante */
+}
+
+/* NOVO: Define que cada item deve ocupar 32% da largura.
+   Isso permite que 3 itens (32% + 32% + 32% = 96%) caibam na mesma linha,
+   deixando espaço para os gaps. */
+.habilidades-resumo li {
+    background-color: var(--cor-fundo);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--cor-texto);
+    /* Alterado de volta para cor de texto principal */
+
+    /* Configuração da Grid Simétrica: 3 itens por linha */
+    flex-basis: calc(33.33% - 7px);
+    /* Garante que 3 itens caibam na linha */
+    text-align: center;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 600px) {
+    /* ... (outras regras mobile) ... */
+
+    /* NOVO: No celular, voltamos para 1 item por linha (100% da largura) */
+    .habilidades-resumo li {
+        flex-basis: 100%;
+        text-align: left;
+    }
 }
 
 /* Estilo de "tags" para as habilidades */
