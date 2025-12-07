@@ -150,7 +150,7 @@ body {
     border-radius: 20px;
     font-size: 0.9em;
     font-weight: 500;
-    color: var(--cor-texto); /* Cor de texto ajustada para legibilidade */
+    color: var(--cor-branca); /* Cor de texto ajustada para legibilidade */
     
     /* Configuração para 3 itens por linha em telas maiores */
     flex-basis: calc(33.33% - 7px);
