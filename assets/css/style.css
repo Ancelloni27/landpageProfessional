@@ -1,230 +1,179 @@
-/* Importação da fonte */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
-/* ================= VARIÁVEIS DE TEMA ================= */
+/* ================= 1. VARIÁVEIS (Cores do Tema) ================= */
 :root {
-    --cor-fundo-site: #AEA3B0;
-    --cor-primaria: #007bff;
-    --cor-texto: #333333;
-    --cor-secundaria: #6c757d;
-    --cor-roxaclara: #E7E6F7;
-    --cor-branca: #FFFFFF;
+    --bg-site: #AEA3B0;       /* Fundo geral cinza/roxo */
+    --bg-sidebar: #E7E6F7;    /* Fundo da barra lateral */
+    --bg-card: #FFFFFF;       /* Fundo branco */
+    --text-main: #333333;     /* Texto principal */
+    --text-light: #666666;    /* Texto secundário */
+    --primary: #007bff;       /* Azul destaque */
+    
     /* Cores de Marcas */
-    --cor-whatsapp: #25D366;
-    --cor-linkedin: #0077B5;
+    --whatsapp: #25D366;
+    --linkedin: #0077B5;
 }
 
-/* ================= RESET E ESTRUTURA BASE ================= */
+/* ================= 2. RESET BÁSICO E TIPOGRAFIA ================= */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: var(--cor-texto);
-    background-color: var(--cor-fundo-site);
+    color: var(--text-main);
+    background-color: var(--bg-site);
+    line-height: 1.5;
+    
+    /* LAYOUT DIVIDIDO (Desktop) */
+    display: flex;       
+    height: 100vh;       /* Altura total */
+    overflow: hidden;    /* Evita rolagem na página inteira */
+}
+
+/* ================= 3. BARRA LATERAL (Esquerda) ================= */
+.sidebar {
+    width: 320px;            
+    background-color: var(--bg-sidebar);
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Container de largura máxima e centralizado */
-.container {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* ================= SEÇÃO HERO (Apresentação) ================= */
-.hero {
-    background-color: var(--cor-roxaclara);
-    padding: 32px 0;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;     
     text-align: center;
-    border-bottom: 1px solid #eee;
+    padding: 20px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    overflow-y: auto;        /* Permite rolagem interna se necessário */
 }
 
-.profile-photo {
+.foto-perfil {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--cor-secundaria);
+    border: 5px solid var(--bg-card);
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra estática para destaque */
 }
 
-.hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    font-weight: 700;
+.profissao { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+.detalhe { font-size: 0.9rem; color: var(--text-light); margin-bottom: 15px; }
+.resumo { font-size: 0.95rem; max-width: 250px; margin-bottom: 20px; }
+.localizacao { color: var(--text-light); font-size: 0.9rem; }
+
+/* ================= 4. CONTEÚDO PRINCIPAL (Direita) ================= */
+.main-wrapper {
+    flex: 1;              /* Ocupa o resto do espaço */
+    overflow-y: auto;     /* Apenas este lado rola */
+    display: flex;
+    flex-direction: column;
 }
 
-.hero .profissao, .hero .resumo, .hero .localizacao {
-    color: var(--cor-secundaria);
-    margin-bottom: 10px;
+.conteudo {
+    padding: 50px 20px;
+    flex: 1; 
 }
 
-.hero .profissao {
-    color: var(--cor-primaria);
-    font-size: 1.2em;
+.container-limite {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* ================= SEÇÃO CONTATO E PRINCIPAL ================= */
-.contato-section {
-    flex-grow: 1;
-    padding: 40px 0;
-}
+h2 { font-size: 2rem; margin-bottom: 5px; color: var(--bg-card); }
+.subtitulo { color: #f0f0f0; margin-bottom: 40px; }
 
-.contato-section h2 {
-    text-align: center;
-    font-size: 1.6em;
-    margin-bottom: 30px;
-}
-
-/* Links de Contato */
-.contatos-links {
-    display: flex; 
-    justify-content: center;
+/* --- Botões --- */
+.grid-botoes {
+    display: flex;
     gap: 15px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     margin-bottom: 40px;
 }
 
-.contato-btn {
+.btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: white;
     display: inline-flex;
     align-items: center;
-    padding: 12px 25px;
-    border-radius: 36px;
-    text-decoration: none;
-    font-weight: 700;
-    color: var(--cor-texto);
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra estática */
+    /* Removemos transition, transform */
 }
 
-.contato-btn .icon {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
+.btn:hover { 
+    opacity: 0.85; /* Simplesmente escurece um pouco ao passar o mouse */
+} 
 
-/* Removido o seletor .contato-btn:hover vazio */
+.whatsapp { background: var(--whatsapp); }
+.email { background: var(--primary); }
+.linkedin { background: var(--linkedin); }
+.download { background: var(--bg-card); color: var(--text-main); }
 
-/* Cores dos botões de marca */
-.whatsapp { background-color: var(--cor-whatsapp); }
-.email { background-color: var(--cor-primaria); color: var(--cor-branca); }
-.linkedin { background-color: var(--cor-linkedin); color: var(--cor-branca); }
-.download { 
-    background-color: var(--cor-branca);
-    color: var(--cor-texto);
-}
 
-/* ================= GRID DE PRINCIPAIS FOCOS ================= */
-.focos-grid-section {
-    padding: 20px 0 40px 0;
-}
+/* --- Cards --- */
+.secao-cards h3 { margin-bottom: 20px; color: var(--bg-card); }
 
-.focos-grid-section h3 {
-    text-align: center;
-    font-size: 1.6em;
-    margin-bottom: 30px;
-    color: var(--cor-texto);
-}
-
-.focos-grid {
+.grid-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.foco-card {
-    background-color: var(--cor-branca);
+.card {
+    background: var(--bg-card);
     padding: 20px;
-    border-radius: 16px;
+    border-radius: 15px;
+    text-align: center;
+    /* Removemos transition e transform */
 }
 
-/* Removido o seletor .foco-card:hover vazio */
-
-.foco-card h4 {
-    font-weight: 700;
-    font-size: 1em;
-    color: var(--cor-primaria);
-    margin-bottom: 10px;
+.card:hover {
+    background: #f8f8f8; /* Mínima mudança de cor ao passar o mouse */
 }
 
-.foco-card p {
-    font-size: 0.9em;
-    color: var(--cor-texto);
-}
+.icone-card { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
+.card h4 { margin-bottom: 5px; color: var(--primary); }
+.card p { font-size: 0.9rem; color: var(--text-light); }
 
-/* ================= RESUMO DE HABILIDADES (Antiga) ================= */
-.habilidades-resumo {
-    background-color: var(--cor-branca);
+/* ================= 5. RODAPÉ ================= */
+.rodape {
+    text-align: center;
     padding: 30px;
-    border-radius: 32px;
+    background: rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.2);
 }
+.copyright { margin-top: 15px; font-size: 0.8rem; color: #fff; }
 
-.habilidades-resumo h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: var(--cor-texto);
-}
-
-.habilidades-resumo ul {
-    list-style: none;
-    padding-left: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.habilidades-resumo li {
-    background-color: var(--cor-fundo-site);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: 500;
-    color: var(--cor-texto);
-    flex-basis: calc(33.33% - 7px);
-    text-align: center;
-}
-
-/* ================= RODAPÉ ================= */
-.footer {
-    text-align: center;
-    padding: 30px 0;
-    background-color: var(--cor-roxaclara);
-    color: var(--cor-secundaria);
-    font-size: 0.9em;
-    border-top: 1px solid #eee;
-}
-
-.footer-actions {
-    margin-bottom: 15px;
-}
-
-/* ================= RESPONSIVIDADE (Celulares) ================= */
-@media (max-width: 600px) {
+/* ================= 6. RESPONSIVIDADE (CELULAR) ================= */
+@media (max-width: 768px) {
     
-    .hero h1 {
-        font-size: 1.8em;
+    body {
+        flex-direction: column; 
+        height: auto;           
+        overflow: auto;         
     }
 
-    .contatos-links {
-        flex-direction: column;
+    /* Ajuste da Barra Lateral no Mobile */
+    .sidebar {
+        width: 100%;            
+        padding: 40px 20px;
+        border-right: none;
+        border-bottom: 5px solid var(--primary);
     }
 
-    .contato-btn {
+    /* Conteúdo Principal */
+    .conteudo {
+        padding: 30px 20px;
+    }
+
+    /* Botões Full Width (Largura total) */
+    .btn {
         width: 100%;
         justify-content: center;
     }
-    
-    .habilidades-resumo li {
-        flex-basis: 100%;
-    }
 
-    .focos-grid {
-        grid-template-columns: 1fr;
-    }
+    /* Títulos menores */
+    h2 { font-size: 1.5rem; text-align: center; }
+    .subtitulo { text-align: center; font-size: 0.9rem; }
 }
