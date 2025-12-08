@@ -4,9 +4,7 @@
     /* Cores de Fundo */
     --bg-site: #000000;
     --bg-accent: #F60517;
-    /* Vermelho de Destaque */
     --bg-card-hover: #FFFFFF;
-    /* Branco no hover do Card */
     --bg-glass: rgba(246, 5, 23, 0.8);
 
     /* Cores de Texto */
@@ -175,8 +173,8 @@ hr {
 }
 
 .foto-perfil-principal {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     margin-bottom: 15px;
 }
@@ -205,6 +203,7 @@ hr {
 
 /* Títulos */
 h3 {
+    text-align: center;
     margin-bottom: 20px;
     color: var(--bg-accent);
     font-size: 1.6rem;
@@ -258,7 +257,7 @@ h3 {
     -webkit-backdrop-filter: blur(15px);
 
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 36px;
     text-align: center;
     color: var(--text-contrast);
     transition: all 0.3s ease;
@@ -306,7 +305,7 @@ h3 {
 .rodape {
     text-align: center;
     padding: 30px;
-    background: var(--bg-glass);
+    /* background: var(--bg-glass); */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
