@@ -16,7 +16,7 @@
 
 <body>
 
-    <header class="sidebar hidden" id="sidebar">
+    <header class="sidebar collapsed" id="sidebar">
         <div class="sidebar-content">
             
             <h2 class="sidebar-titulo">Meus Contatos</h2>
@@ -24,13 +24,13 @@
 
             <div class="grid-botoes-sidebar">
                 <a href="https://wa.me/5511972625388" target="_blank" class="btn whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                    <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
                 </a>
                 <a href="mailto:gabriel.ancelloni@hotmail.com" class="btn email">
-                    <i class="fas fa-envelope"></i> Email
+                    <i class="fas fa-envelope"></i> <span>Email</span>
                 </a>
                 <a href="https://www.linkedin.com/in/gabriel-ancelloni-662598292/" target="_blank" class="btn linkedin">
-                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                    <i class="fab fa-linkedin-in"></i> <span>LinkedIn</span>
                 </a>
             </div>
             
@@ -41,7 +41,7 @@
         <i class="fas fa-arrow-right"></i>
     </button>
 
-    <div class="main-wrapper expanded" id="mainWrapper">
+    <div class="main-wrapper" id="mainWrapper">
         
         <main class="conteudo">
             <div class="container-limite">
@@ -58,8 +58,6 @@
                     </p>
                 </div>
                 
-                <hr>
-
                 <section class="secao-cards">
                     <h3>Meus Focos Atuais</h3>
                     <div class="grid-cards">
@@ -105,19 +103,18 @@
     <script>
         const sidebar = document.getElementById('sidebar');
         const sidebarToggle = document.getElementById('sidebarToggle');
-        const mainWrapper = document.getElementById('mainWrapper');
-
+        
         sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('hidden');
-            mainWrapper.classList.toggle('expanded');
+            // Alterna a classe 'collapsed'
+            sidebar.classList.toggle('collapsed');
             
             const icon = sidebarToggle.querySelector('i');
-            if (sidebar.classList.contains('hidden')) {
-                // Se oculta, mostra seta para a direita (ícone de 'abrir')
+            if (sidebar.classList.contains('collapsed')) {
+                // Se recolhida, mostra seta para a direita (ícone de 'abrir/expandir')
                 icon.classList.remove('fa-arrow-left');
                 icon.classList.add('fa-arrow-right');
             } else {
-                // Se visível, mostra seta para a esquerda (ícone de 'fechar')
+                // Se expandida, mostra seta para a esquerda (ícone de 'fechar/recolher')
                 icon.classList.remove('fa-arrow-right');
                 icon.classList.add('fa-arrow-left');
             }
