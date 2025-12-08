@@ -1,28 +1,24 @@
-/*VARIÁVEIS E CONFIGs GLOBAIS*/
+
+/*VARIÁVEIS E CONFIGURAÇÕES GLOBAIS*/
 :root {
     /* Cores de Fundo */
-    --bg-site: #000000;
-    --bg-accent: #F60517;
-    /* Vermelho de Destaque */
-    --bg-card-hover: #FFFFFF;
-    /* Branco no hover do Card */
-    --bg-glass-effect: rgba(246, 5, 23, 0.2);
-    /* Vermelho com 20% opacidade para Glass */
-
+    --bg-site: #000000;       
+    --bg-accent: #F60517;     /* Vermelho de Destaque */
+    --bg-card-hover: #FFFFFF; /* Branco no hover do Card */
+    /* TRANSPARÊNCIA REDUZIDA PARA 10% (0.1) */
+    --bg-glass-effect: rgba(246, 5, 23, 0.1); 
+    
     /* Cores de Texto */
-    --text-dark: #333333;
-    /* Texto principal (escuro) */
-    --text-light: #666666;
-    /* Texto secundário (cinza claro) */
-    --text-contrast: #FFFFFF;
-    /* Texto para contraste (usado no fundo vermelho/escuro) */
+    --text-dark: #333333;     
+    --text-light: #666666;    
+    --text-contrast: #FFFFFF; 
 }
 
 /* Reset Básico */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 /* Configurações Globais do Body */
@@ -31,83 +27,72 @@ body {
     color: var(--text-dark);
     background-color: var(--bg-site);
     line-height: 1.5;
-
-    /* Layout: Flex para dividir Sidebar e Conteúdo em Desktop */
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
+    
+    display: flex;       
+    height: 100vh;       
+    overflow: hidden;    
 }
 
-/*STRUTURA DA SIDEBAR*/
+/*SIDEBAR*/
 .sidebar {
-    width: 320px;
-    background-color: var(--bg-glass-effect);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
+    width: 320px;            
+    /* Aplica a nova transparência */
+    background-color: var(--bg-glass-effect); 
+    backdrop-filter: blur(15px);               
+    -webkit-backdrop-filter: blur(15px);       
+    
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column;  
+    align-items: center;     
     text-align: center;
-    padding: 40px 20px 20px;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    overflow-y: auto;
-    color: var(--text-contrast);
+    padding: 40px 20px 20px; 
+    border-right: 1px solid rgba(255, 255, 255, 0.1); 
+    overflow-y: auto;        
+    color: var(--text-contrast); 
     transition: all 0.3s ease;
 }
 
-.foto-perfil {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 25px;
-}
-
-/* NOVO: Nome Completo Adicionado */
-.nome-completo {
+/*Títulos na Sidebar*/
+.sidebar-titulo {
     font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--text-contrast);
-    /* Branco */
+    margin-bottom: 5px;
+    color: var(--text-contrast); 
 }
-
-/* Estilos de Texto da Sidebar */
-.profissao {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text-contrast);
-}
-
-.detalhe {
+.sidebar-subtitulo {
     font-size: 0.9rem;
     color: var(--text-contrast);
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
-.resumo {
-    font-size: 0.95rem;
-    max-width: 250px;
-    margin-bottom: 20px;
+/*Container dos Botões na Sidebar*/
+.grid-botoes-sidebar {
+    display: flex;
+    flex-direction: column; /* Botões empilhados */
+    gap: 15px;
+    width: 100%;
+    max-width: 250px; /* Limita a largura dos botões */
 }
 
-.localizacao {
-    color: var(--text-contrast);
-    font-size: 0.9rem;
+/*Ajusta o padding para que os botões não fiquem grudados*/
+.sidebar .btn {
+    width: 100%;
+    justify-content: center;
 }
 
-/*CONTEÚDO PRINCIPAL (Main Wrapper)*/
+
+/*PERFIIL E FOCOS*/
 .main-wrapper {
-    flex: 1;
-    overflow-y: auto;
+    flex: 1;              
+    overflow-y: auto;     
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; 
 }
 
 .conteudo {
     padding: 50px 20px;
-    flex: 1;
-    /* Permite que o conteúdo ocupe o espaço restante */
+    flex: 1; 
 }
 
 .container-limite {
@@ -115,177 +100,179 @@ body {
     margin: 0 auto;
 }
 
-/* Títulos e Subtítulos */
-h2 {
-    font-size: 2rem;
-    margin-bottom: 5px;
-    color: var(--bg-accent);
-    /* Cor Vermelha */
-}
-
-.subtitulo {
-    color: #f0f0f0;
-    margin-bottom: 40px;
-}
-
-.secao-cards h3 {
-    margin-bottom: 20px;
-    color: var(--bg-accent);
-}
-
-/*ESTILOS DE COMPONENTES (BTs/Cards)*/
-/*BTS*/
-.grid-botoes {
+/* --- Informações do Perfil MOVIDAS para a Página Principal (Header) --- */
+.info-perfil-principal {
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     margin-bottom: 40px;
 }
+.foto-perfil-principal {
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+.nome-completo-principal {
+    font-size: 2.5rem;
+    margin-bottom: 5px; 
+    color: var(--bg-accent); 
+}
+.profissao-principal {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #f0f0f0; 
+    margin-bottom: 10px;
+}
+.localizacao-principal, .resumo-principal {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+}
+.resumo-principal {
+    max-width: 500px;
+    margin-top: 15px;
+}
 
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 40px 0;
+}
+
+/* Títulos e Subtítulos */
+h3 { 
+    margin-bottom: 20px; 
+    color: var(--bg-accent); 
+    font-size: 1.6rem;
+} 
+
+/*ESTILOS DE COMPONENTES (Botões/Cards)*/
 .btn {
     text-decoration: none;
     padding: 12px 25px;
     border-radius: 50px;
     font-weight: bold;
-    color: white;
+    color: white; 
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
     transition: opacity 0.3s ease;
 }
 
-.btn:hover {
-    opacity: 0.85;
+.btn:hover { 
+    opacity: 0.85; 
+} 
+
+/* Botões de Contato*/
+.whatsapp, .email, .linkedin { 
+    background: var(--bg-accent); 
 }
 
-/* BTs de Contato*/
-.whatsapp,
-.email,
-.linkedin {
-    background: var(--bg-accent);
+/* Botão Download*/
+.download { 
+    background: var(--bg-card-hover); 
+    color: var(--text-dark);          
 }
 
-/* BT Download*/
-.download {
-    background: var(--bg-card-hover);
-    color: var(--text-dark);
-}
-
-/*Cards de Focos*/
+/*Cards de Focos (Invariante)*/
 .grid-cards {
     display: grid;
-    /* Grid Responsivo: Mínimo de 200px por coluna */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-/* Estilo Padrão Card*/
 .card {
-    background: var(--bg-accent);
+    background: var(--bg-accent); 
     padding: 20px;
     border-radius: 15px;
     text-align: center;
-    color: var(--text-contrast);
+    color: var(--text-contrast); 
     transition: all 0.3s ease;
 }
 
-.icone-card {
-    font-size: 2rem;
-    color: var(--text-contrast);
-    margin-bottom: 10px;
+.icone-card { 
+    font-size: 2rem; 
+    color: var(--text-contrast); 
+    margin-bottom: 10px; 
     transition: color 0.3s ease;
-}
-
-.card h4 {
-    margin-bottom: 5px;
-    color: var(--text-contrast);
+} 
+.card h4 { 
+    margin-bottom: 5px; 
+    color: var(--text-contrast); 
     transition: color 0.3s ease;
-}
-
-.card p {
-    font-size: 0.9rem;
-    color: var(--text-contrast);
+} 
+.card p { 
+    font-size: 0.9rem; 
+    color: var(--text-contrast); 
     transition: color 0.3s ease;
-}
+} 
 
-/* Estilo no Hover*/
 .card:hover {
-    background: var(--bg-card-hover);
-    color: var(--text-dark);
+    background: var(--bg-card-hover); 
+    color: var(--text-dark); 
 }
 
 .card:hover .icone-card,
 .card:hover h4 {
-    color: var(--text-dark);
+    color: var(--text-dark); 
 }
-
 .card:hover p {
-    color: var(--text-light);
+    color: var(--text-light); 
 }
 
-/*RODAPÉ*/
+/*FOOTER*/
 .rodape {
     text-align: center;
     padding: 30px;
-    background: var(--bg-site);
+    background: var(--bg-site); 
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-
-    border-top: none;
+    border-top: none; 
+}
+.copyright { 
+    margin-top: 15px; 
+    font-size: 0.8rem; 
+    color: #fff; 
 }
 
-.copyright {
-    margin-top: 15px;
-    font-size: 0.8rem;
-    color: #fff;
-}
-
-/*TOGGLE*/
-
-/* BT de Toggle */
+/*FUNCIONALIDADE TOGGLE (Desktop)*/
+/* Botão dO Toggle */
 .sidebar-toggle {
     position: fixed;
-    top: 50%;
-    /* Centraliza verticalmente */
-    left: 320px;
-    /* Alinha com a borda direita da sidebar */
-    transform: translateY(-50%);
-    /* Ajuste para o centro exato */
+    top: 50%; 
+    left: 320px; 
+    transform: translateY(-50%); 
     z-index: 1000;
     width: 40px;
     height: 40px;
-    background-color: var(--bg-accent);
-    /* Cor Vermelha (mesma dos BTs de contato) */
-    color: var(--text-contrast);
+    background-color: var(--bg-accent); 
+    color: var(--text-contrast); 
     border: none;
-    border-radius: 0 5px 5px 0;
-    /* Apenas na borda direita */
+    border-radius: 0 5px 5px 0; 
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
     transition: left 0.3s ease, border-radius 0.3s ease;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
 }
 
 /* Estado Oculto da Sidebar */
 .sidebar.hidden {
-    /* Move a sidebar para fora da tela */
-    transform: translateX(-100%);
+    transform: translateX(-100%); 
     width: 0;
     padding: 0;
     opacity: 0;
-    /* Impede o scroll desnecessário */
-    border-right: none;
+    border-right: none; 
 }
 
-/* Move o BT para a borda esquerda (posição 0) quando a sidebar estiver oculta */
-.sidebar.hidden+.sidebar-toggle {
+/* Move o botão para a borda esquerda (posição 0) quando a sidebar estiver oculta */
+.sidebar.hidden + .sidebar-toggle {
     left: 0;
-    border-radius: 5px;
-    /* Arredonda todos os cantos */
+    border-radius: 5px; 
 }
 
 /* Ajusta o wrapper principal para ocupar 100% da largura quando a sidebar estiver oculta */
@@ -293,62 +280,60 @@ h2 {
     width: 100%;
 }
 
-/*RESPONSIVIDADE (Mobile - Max-width: 768px)*/
+/*ESPONSIVIDADE (Mobile - Max-width: 768px)*/
 @media (max-width: 768px) {
-
+    
     body {
-        /* Muda o layout para empilhar Sidebar e Conteúdo */
-        flex-direction: column;
-        height: auto;
-        overflow: auto;
+        flex-direction: column; 
+        height: auto;           
+        overflow: auto;         
     }
 
-    /* Oculta o BT de toggle no mobile */
     .sidebar-toggle {
         display: none !important;
     }
 
-    /* Ajuste da Barra Lateral no Mobile (Full Width) */
+    /* Ajuste da Barra Lateral (Contatos) no Mobile */
     .sidebar {
-        width: 100%;
-        padding: 40px 20px;
+        width: 100%;            
+        padding: 30px 20px;
         border-right: none;
-        border-bottom: 5px solid var(--bg-accent);
-        /* Linha divisória em vermelho */
-
-        /* Remove o desfoque Glass e usa cor sólida no mobile para melhor performance/leitura */
+        border-bottom: 5px solid var(--bg-accent); 
+        
+        /* Remove o desfoque, usa cor sólida vermelha (mais visível no mobile) */
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
-        background-color: var(--bg-accent);
+        background-color: var(--bg-accent); 
         color: var(--text-contrast);
     }
-
-    .rodape {
-        background: var(--bg-site);
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        border-top: none;
+    
+    /* Botões na Sidebar Mobile (Full Width) */
+    .grid-botoes-sidebar {
+        max-width: 100%;
     }
-
-    /* Conteúdo Principal */
-    .conteudo {
-        padding: 30px 20px;
-    }
-
-    /* BT Full Width (Largura total) para melhor usabilidade mobile */
-    .btn {
+    .sidebar .btn {
         width: 100%;
         justify-content: center;
     }
 
-    /* Títulos centralizados e menores no mobile */
-    h2 {
-        font-size: 1.5rem;
-        text-align: center;
+    /* Conteúdo Principal Mobile */
+    .conteudo {
+        padding: 30px 20px;
     }
+    
+    /* Perfil Principal Mobile */
+    .nome-completo-principal { font-size: 2rem; }
+    .profissao-principal { font-size: 1rem; }
+    .resumo-principal { margin-top: 10px; }
+    
+    /* Cards Mobile */
+    h3 { text-align: center; }
 
-    .subtitulo {
-        text-align: center;
-        font-size: 0.9rem;
+    /* Rodapé no mobile */
+    .rodape {
+        background: var(--bg-site); 
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-top: none;
     }
 }
