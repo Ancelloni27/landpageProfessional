@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,25 +11,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-    <header class="sidebar">
+    <header class="sidebar" id="sidebar">
         <div class="sidebar-content">
             <img class="foto-perfil" src="assets/img/profile.svg" alt="Foto de Gabriel">
+
+            <h1 class="nome-completo">Gabriel Ancelloni</h1>
 
             <div class="info-texto">
                 <p class="profissao">Estudante de ADS</p>
                 <p class="detalhe">(3º Período)</p>
-                
+
                 <p class="resumo">
                     Foco em <strong>Swift (iOS)</strong>, Prototipagem e Web.<br>
                     Em busca de estágio.
                 </p>
-                
+
                 <p class="localizacao">
                     <i class="fas fa-map-marker-alt"></i> Guarulhos - SP
                 </p>
@@ -36,8 +39,12 @@
         </div>
     </header>
 
-    <div class="main-wrapper">
-        
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <div class="main-wrapper" id="mainWrapper">
+
         <main class="conteudo">
             <div class="container-limite">
                 <h2>Olá, sou o Gabriel 👋</h2>
@@ -50,7 +57,8 @@
                     <a href="mailto:gabriel.ancelloni@hotmail.com" class="btn email">
                         <i class="fas fa-envelope"></i> Email
                     </a>
-                    <a href="https://www.linkedin.com/in/gabriel-ancelloni-662598292/" target="_blank" class="btn linkedin">
+                    <a href="https://www.linkedin.com/in/gabriel-ancelloni-662598292/" target="_blank"
+                        class="btn linkedin">
                         <i class="fab fa-linkedin-in"></i> LinkedIn
                     </a>
                 </div>
@@ -58,7 +66,7 @@
                 <section class="secao-cards">
                     <h3>Meus Focos Atuais</h3>
                     <div class="grid-cards">
-                        
+
                         <div class="card">
                             <i class="fab fa-apple icone-card"></i>
                             <h4>iOS Nativo</h4>
@@ -70,7 +78,7 @@
                             <h4>Prototipagem</h4>
                             <p>UX/UI Design utilizando Figma.</p>
                         </div>
-                        
+
                         <div class="card">
                             <i class="fas fa-code icone-card"></i>
                             <h4>Web Responsiva</h4>
@@ -97,5 +105,29 @@
 
     </div>
 
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const mainWrapper = document.getElementById('mainWrapper');
+
+        sidebarToggle.addEventListener('click', () => {
+            // Alterna a classe 'hidden' na sidebar
+            sidebar.classList.toggle('hidden');
+            // Alterna a classe 'expanded' no conteúdo principal para ocupar o espaço
+            mainWrapper.classList.toggle('expanded');
+
+            // Troca o ícone do botão
+            const icon = sidebarToggle.querySelector('i');
+            if (sidebar.classList.contains('hidden')) {
+                icon.classList.remove('fa-arrow-left');
+                icon.classList.add('fa-arrow-right');
+            } else {
+                icon.classList.remove('fa-arrow-right');
+                icon.classList.add('fa-arrow-left');
+            }
+        });
+    </script>
+
 </body>
+
 </html>
